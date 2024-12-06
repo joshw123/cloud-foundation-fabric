@@ -133,9 +133,10 @@ variable "essential_contacts" {
 variable "factories_config" {
   description = "Configuration for the resource factories or external data."
   type = object({
-    custom_roles     = optional(string, "data/custom-roles")
-    org_policies     = optional(string, "data/org-policies")
-    org_policies_iac = optional(string, "data/org-policies-iac")
+    custom_roles           = optional(string, "data/custom-roles")
+    org_policies           = optional(string, "data/org-policies")
+    org_policies_iac       = optional(string, "data/org-policies-iac")
+    logging_metrics_alerts = optional(string, "data/alerts")
   })
   nullable = false
   default  = {}

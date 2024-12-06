@@ -1,0 +1,19 @@
+route-changes:
+  description: "Monitor VPC network route configuration changes inside GCP projects"
+  filter: testing
+  display_name: "Network Route Changes"
+  metric_descriptor:
+    metric_kind: DELTA
+    value_type: "INT64"
+  condition_threshold:
+    comparison: COMPARISON_GT
+    duration: "0s"
+  notification_channels:
+    - "projects/jetstack-joshua-wright/notificationChannels/1961000626209091702"
+    - "projects/jetstack-joshua-wright/notificationChannels/15377109399243778186"
+  trigger_count: 1
+  combiner: OR
+  aggregations:
+    per_series_aligner: ALIGN_MEAN
+    cross_series_reducer: REDUCE_COUNT
+    alignment_period: "600s"
