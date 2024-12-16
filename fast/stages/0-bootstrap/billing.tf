@@ -42,9 +42,9 @@ module "billing-export-project" {
   count = (
     local.billing_mode == "org" || var.billing_account.force_create.project == true ? 1 : 0
   )
-  billing_account = var.billing_account.id
+  billing_account      = var.billing_account.id
   default_alerts_email = var.default_alerts_email
-  name            = "billing-exp-0"
+  name                 = "billing-exp-0"
   parent = coalesce(
     var.project_parent_ids.billing, "organizations/${var.organization.id}"
   )
